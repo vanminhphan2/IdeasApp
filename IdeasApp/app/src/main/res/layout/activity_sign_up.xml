@@ -7,7 +7,7 @@ android:orientation="vertical"
 android:background="@drawable/bgdangky"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.example.rio.ideasapp.LogActivity">
+tools:context="com.example.rio.ideasapp.SignUpActivity">
 
 <EditText
     android:inputType="textPersonName"
@@ -31,6 +31,7 @@ tools:context="com.example.rio.ideasapp.LogActivity">
     />
 
 <EditText
+    
     android:layout_height="50dp"
     android:inputType="textPassword"
     android:ems="10"
@@ -76,10 +77,10 @@ tools:context="com.example.rio.ideasapp.LogActivity">
     tools:ignore="MissingConstraints" />
 
 <Button
-    android:id="@+id/btnlogin"
+    android:id="@+id/btnback"
     android:layout_width="130dp"
     android:layout_height="45dp"
-    android:text="Đăng nhập"
+    android:text="Quay lại"
     android:textSize="17dp"
     android:textAlignment="center"
     android:gravity="center"

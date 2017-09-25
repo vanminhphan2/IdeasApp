@@ -45,16 +45,15 @@ public class MainActivity extends AppCompatActivity {
         }
         return str;
     }
-
+    DatabaseReference mData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.e("Tag", getSHA1(this));
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
+        mData= FirebaseDatabase.getInstance().getReference();
+        mData.child("Hoten").setValue("Rio Phan");
     }
+
 }
