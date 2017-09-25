@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1095387164822",
+    "firebase_url": "https://ideasapp-rioandtiger.firebaseio.com",
+    "project_id": "ideasapp-rioandtiger",
+    "storage_bucket": "ideasapp-rioandtiger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095387164822:android:c1356a15a903d88e",
+        "android_client_info": {
+          "package_name": "com.example.rio.ideasapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095387164822-d4gtkhq4o04n06073sh9klk27qbt9gk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rio.ideasapp",
+            "certificate_hash": "1231123123112312311231123112312311231231"
+          }
+        },
+        {
+          "client_id": "1095387164822-9lbtea0k1d3uicfcsgnd7btte2of9f0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgd3DKMWE0P128kwix8bUtLoVfghUsKMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095387164822-9lbtea0k1d3uicfcsgnd7btte2of9f0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
