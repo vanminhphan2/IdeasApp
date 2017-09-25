@@ -52,6 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         btnsignup = (Button) findViewById(R.id.btnsignup);
         btnback = (Button) findViewById(R.id.btnback);
     }
+
     private void SignUp()
     {
         String email= edtusername.getText().toString();
