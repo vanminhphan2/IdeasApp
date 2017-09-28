@@ -57,16 +57,26 @@ public class LogActivity extends AppCompatActivity {
     {
         String email= edtusername.getText().toString();
         String password= edtassword.getText().toString();
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LogActivity.this,"Đăng nhập thành công!", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(LogActivity.this,"Lỗi", Toast.LENGTH_LONG).show();
+        if(email.length()!=0&&password.length()!=0)
+        {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LogActivity.this,"Đăng nhập thành công!", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(LogActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(LogActivity.this,"Lỗi", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
+                    });
+
+        }
+        else {
+            Toast.makeText(LogActivity.this,"Thieu thong tin!",Toast.LENGTH_LONG).show();
+        }
+
     }
 }

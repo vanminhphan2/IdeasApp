@@ -57,16 +57,24 @@ public class SignUpActivity extends AppCompatActivity {
     {
         String email= edtusername.getText().toString();
         String password= edtassword.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(SignUpActivity.this,"Đăng kí thành công!", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(SignUpActivity.this,"Lỗi", Toast.LENGTH_LONG).show();
+        if(email.length()!=0&&password.length()!=0)
+        {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(SignUpActivity.this,"Đăng kí thành công!", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(SignUpActivity.this,"Lỗi", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
+                    });
+
+        }
+        else {
+            Toast.makeText(SignUpActivity.this,"Thieu thông tin!",Toast.LENGTH_LONG).show();
+        }
+
     }
 }
