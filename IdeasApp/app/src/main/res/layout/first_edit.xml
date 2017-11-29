@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgavatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="#f1e7e7"
+            app:civ_border_width="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edthoten"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="Họ và tên"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edtTp"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Thành Phố"
+                android:inputType="textPersonName" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/nam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:id="@+id/nu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nữ" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#41ac0c"
+            android:text="Danh mục yêu thích"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="10dp"
+            android:columnWidth="150dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/circlebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_default"
+            android:paddingBottom="5dp"
+            android:text="CẬP NHẬT"
+            android:textColor="#f7f3f3"
+            android:textColorLink="@color/colorPrimaryDark"
+            app:spinning_bar_color="#e68b0b"
+            app:spinning_bar_padding="6dp"
+            app:spinning_bar_width="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

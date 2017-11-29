@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#7cbec1c4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tbuser"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FF810505">
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btncancel"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="#00faf8f8"
+                android:text="Hủy"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#faf8f8"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnadd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00faf8f8"
+                android:text="Thêm ảnh/video"
+                android:textAllCaps="false"
+                android:textColor="#faf8f8"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_weight="0.93" />
+
+            <Button
+                android:id="@+id/btndang"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="#00faf8f8"
+                android:text="Đăng"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#faf8f8"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_weight="0.07" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutpro"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="#f7f5f5">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgavar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="#f1e7e7"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/txtname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:background="#f7f5f5"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#ef2e2f30"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtchude"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#eff3f5f7"
+                android:gravity="center_vertical"
+                android:text="   Chủ đề:   "
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#ef0a34"
+                android:dropDownSelector="@color/green"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#f7f5f5"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Bạn có ý tưởng mới?"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#f7f5f5">
+
+        <ImageView
+            android:id="@+id/imgadd"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgavar2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="#f1e7e7"
+            app:civ_border_width="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtusername2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold|italic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtlinhvuc2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="Lĩnh vực:"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textSize="14dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/txtchude2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textSize="14dp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/btnfollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_follow"
+                    android:onClick="onCLick" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtpost_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/post_img2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/coverimg" />
+
+        <ListView
+            android:id="@+id/listcmt"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/edtcomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Viết bình luận..."
+                android:inputType="textMultiLine"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btnrating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Send"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
