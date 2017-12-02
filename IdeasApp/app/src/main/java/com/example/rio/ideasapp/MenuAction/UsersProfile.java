@@ -56,7 +56,7 @@ public class UsersProfile extends Activity
     private  boolean Rating = false, report = false;
     private int i=0;
     public static ArrayAdapter<String> rpadapter;
-    String[] listrep = {"Report"};
+    String[] listrep = {"Report", "Delete"};
 
 
     //firebase
@@ -266,11 +266,11 @@ public class UsersProfile extends Activity
                     public void onClick(View view) {
                         if (report == false)
                         {
-                            viewHolder.setReport(post_key, report, rpadapter, user);
+                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
                             report = true;
                         }
                         else {
-                            viewHolder.setReport(post_key, report, rpadapter, user);
+                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
                             report = false;
                         }
 
@@ -305,24 +305,44 @@ public class UsersProfile extends Activity
 
         }
 
-        public void setReport(final String post_key, boolean value, final ArrayAdapter<String> adapter, String email)
+        public void setReport(final String post_key, boolean value, final ArrayAdapter<String> adapter, String email, String name)
         {
             if (value == false)
             {
                 reportlist.setVisibility(View.VISIBLE);
                 if (!email.equals("admin@gmailcom"))
                 {
-                    ViewGroup.LayoutParams params = reportlist.getLayoutParams();
-                    params.height = 150;
-                    reportlist.setLayoutParams(params);
-                    reportlist.requestLayout();
-                    reportlist.setAdapter(adapter);
-                    reportlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            mdataRating.child(post_key).child("Reported").setValue("true");
-                        }
-                    });
+                    if (!email.equals(name))
+                    {
+                        ViewGroup.LayoutParams params = reportlist.getLayoutParams();
+                        params.height = 150;
+                        reportlist.setLayoutParams(params);
+                        reportlist.requestLayout();
+                        reportlist.setAdapter(adapter);
+                        reportlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                mdataRating.child(post_key).child("Reported").setValue("true");
+                            }
+                        });
+                    }
+                    else {
+                        reportlist.setAdapter(adapter);
+                        reportlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                String val = adapter.getItem(i).toString();
+                                if (val.equals("Delete"))
+                                {
+                                    mdataRating.child(post_key).removeValue();
+                                }
+                                else
+                                {
+                                    mdataRating.child(post_key).child("Reported").setValue("true");
+                                }
+                            }
+                        });
+                    }
                 }
                 else {
 

@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //
     public static ArrayAdapter<String> rpadapter;
-    String[] listrep = {"Report"};
+    String[] listrep = {"Report", "Delete"};
     String[] listadmin = {"Delete", "Dismiss"};
 
 
@@ -151,9 +151,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 }
             });
+            navmenu.inflateHeaderView(R.layout.header_admin);
+            navmenu.inflateMenu(R.menu.menu_admin);
             onStart(queryrep);
         }
         else {
+            navmenu.inflateHeaderView(R.layout.header);
+            navmenu.inflateMenu(R.menu.menu_item);
             rpadapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,listrep );
             //get value for displayname from firebase
             mData.child("Users").child(user).child("Profiles").child("Hoten").addValueEventListener(new ValueEventListener() {
@@ -282,12 +286,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //create menu search and notification
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (user.equals("admin@gmailcom"))
-        {
-            getMenuInflater().inflate(R.menu.menu_admin, menu);
-            return  true;
-        }
-        else {
+
+
             getMenuInflater().inflate(R.menu.menu_main, menu);
             final MenuItem menuItem, searchitem;
             menuItem = menu.findItem(R.id.message);
@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     return false;
                 }
             });
-        }
+
         return true;
     }
 
@@ -533,11 +533,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     public void onClick(View view) {
                         if (report == false)
                         {
-                            viewHolder.setReport(post_key, report, rpadapter, user);
+                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
                             report = true;
                         }
                         else {
-                            viewHolder.setReport(post_key, report, rpadapter, user);
+                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
                             report = false;
                         }
                     }

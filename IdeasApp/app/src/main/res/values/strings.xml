@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IdeasApp</string>
+    <string name="app_name"></string>
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="Register">Đăng Ký</string>
