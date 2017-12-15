@@ -531,15 +531,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 viewHolder.reportclick.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (report == false)
-                        {
-                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
-                            report = true;
-                        }
-                        else {
-                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
-                            report = false;
-                        }
+                        viewHolder.setReport(post_key, rpadapter, user, model.getUser());
                     }
                 });
             }

@@ -264,15 +264,7 @@ public class UsersProfile extends Activity
                 viewHolder. reportclick.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (report == false)
-                        {
-                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
-                            report = true;
-                        }
-                        else {
-                            viewHolder.setReport(post_key, report, rpadapter, user, model.getUser());
-                            report = false;
-                        }
+                        viewHolder.setReport(post_key, rpadapter, user, model.getUser());
 
                     }
                 });
@@ -305,10 +297,9 @@ public class UsersProfile extends Activity
 
         }
 
-        public void setReport(final String post_key, boolean value, final ArrayAdapter<String> adapter, String email, String name)
+        public void setReport(final String post_key, final ArrayAdapter<String> adapter, String email, String name)
         {
-            if (value == false)
-            {
+
                 reportlist.setVisibility(View.VISIBLE);
                 if (!email.equals("admin@gmailcom"))
                 {
@@ -323,6 +314,7 @@ public class UsersProfile extends Activity
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 mdataRating.child(post_key).child("Reported").setValue("true");
+                                reportlist.setVisibility(View.GONE);
                             }
                         });
                     }
@@ -335,10 +327,12 @@ public class UsersProfile extends Activity
                                 if (val.equals("Delete"))
                                 {
                                     mdataRating.child(post_key).removeValue();
+                                    reportlist.setVisibility(View.GONE);
                                 }
                                 else
                                 {
                                     mdataRating.child(post_key).child("Reported").setValue("true");
+                                    reportlist.setVisibility(View.GONE);
                                 }
                             }
                         });
@@ -354,21 +348,17 @@ public class UsersProfile extends Activity
                             if (val.equals("Delete"))
                             {
                                 mdataRating.child(post_key).removeValue();
+                                reportlist.setVisibility(View.GONE);
                             }
                             else
                             {
                                 mdataRating.child(post_key).child("Reported").removeValue();
+                                reportlist.setVisibility(View.GONE);
                             }
                         }
                     });
                 }
 
-            }
-            else
-            {
-
-                reportlist.setVisibility(View.GONE);
-            }
         }
 
         public void setRating(String post_key, final String user)

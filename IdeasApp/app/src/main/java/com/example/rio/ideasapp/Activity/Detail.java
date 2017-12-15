@@ -118,11 +118,6 @@ public class Detail extends Activity {
                                     .load(storageReference)
                                     .into(avatar2);
                         }
-                        if (dataimg[0] == "null")
-                        {
-                            avatar2.setImageResource(R.drawable.default_avatar);
-                        }
-
                     }
 
                     @Override
