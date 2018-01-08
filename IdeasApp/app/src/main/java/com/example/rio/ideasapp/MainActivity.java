@@ -555,13 +555,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        mData.child("Users").child(user).child("Message").child(mess_key).child("view").setValue("true");
                         mData.child("Users").child(user).child("Message").child("Value").setValue("true");
                         Intent todetail = new Intent(MainActivity.this, Detail.class);
                         todetail.putExtra("bd_id", post_key);
                         todetail.putExtra("user_cmt", model.getuid());
                         startActivity(todetail);
-                        mData.child("Users").child(user).child("Message").child(mess_key).child("view").setValue("true");
                         listmessage.setVisibility(View.GONE);
                     }
                 });
