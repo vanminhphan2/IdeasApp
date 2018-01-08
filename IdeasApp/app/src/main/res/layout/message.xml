@@ -44,8 +44,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="Đã bình luận bài viết của bạn"
-                android:textAlignment="viewEnd"
+                android:text="Đã viết bình luận"
+                android:textAlignment="viewStart"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="14dp"
                 android:textStyle="bold" />

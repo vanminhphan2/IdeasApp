@@ -47,7 +47,7 @@ public class Detail extends Activity {
     private EditText comment;
     private Button sendcmt;
     private ListView viewcomment;
-    private String post_key;
+    private String post_key, user_cmt;
     CommentAdapter adapter;
     private ArrayList<Comment> commentslist;
     private boolean following = false;
@@ -70,6 +70,7 @@ public class Detail extends Activity {
         mData = FirebaseDatabase.getInstance().getReference().child("ListPost");
         mdata = FirebaseDatabase.getInstance().getReference().child("Accounts").child("Users");
         post_key = getIntent().getExtras().getString("bd_id");
+        user_cmt = getIntent().getExtras().getString("user_cmt");
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -164,6 +165,8 @@ public class Detail extends Activity {
         viewcomment = (ListView)findViewById(R.id.listcmt);
         viewcomment.setAdapter(adapter);
         // message adapter
+        final String[] listusercmt = {};
+        int d =0;
 
 
         loadComment();
@@ -181,7 +184,13 @@ public class Detail extends Activity {
                 message.setKey(post_key);
                 message.setView("false");
                 mData.child(post_key).child("Comment").push().setValue(newcomment);
-                if(!user2.equals(nameuser))
+                if(user2.equals(nameuser)) // user2 is user login -- nameuser is user of baidang
+                {
+                    DatabaseReference notifi = mdata.child(user_cmt).child("Message").push();
+                    notifi.setValue(message);
+                    mdata.child(user_cmt).child("Message").child("Value").setValue("false");
+                }
+                else
                 {
                     DatabaseReference notifi = mdata.child(nameuser).child("Message").push();
                     notifi.setValue(message);

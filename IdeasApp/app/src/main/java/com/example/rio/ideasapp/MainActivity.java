@@ -217,12 +217,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 }
             });
-
             onStart(querynull);
 
-            // message view
-            onStartMess(querymess);
         }
+        // message view
+        onStartMess(querymess);
 
 
     }
@@ -547,7 +546,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Message.class, R.layout.message, MessageAdapter.class, newquery
         ) {
             @Override
-            protected void populateViewHolder(final MessageAdapter viewHolder, Message model, int position) {
+            protected void populateViewHolder(final MessageAdapter viewHolder, final Message model, int position) {
                 final String mess_key = getRef(position).getKey();
                 final String post_key = model.getKey();
                 viewHolder.setuid(model.getuid());
@@ -556,11 +555,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mData.child("Users").child(user).child("Message").child(mess_key).child("view").setValue("true");
+
                         mData.child("Users").child(user).child("Message").child("Value").setValue("true");
                         Intent todetail = new Intent(MainActivity.this, Detail.class);
                         todetail.putExtra("bd_id", post_key);
+                        todetail.putExtra("user_cmt", model.getuid());
                         startActivity(todetail);
+                        mData.child("Users").child(user).child("Message").child(mess_key).child("view").setValue("true");
                         listmessage.setVisibility(View.GONE);
                     }
                 });
